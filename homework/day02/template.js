@@ -2,7 +2,7 @@ import { sendNumber, checkValidationEmail,checkValidationIdNumber,checkLengthNum
 
 
 
-function createUser({name, email, number, phone, site, newnumber}){
+function createUser({name, email, number, phone, site}){
 
 //1. 이메일 값이 정상인지 확인
 const isValidEmail = checkValidationEmail(email)
@@ -19,7 +19,7 @@ if(NumberLength === false) return false
 const isValidPhone = checkValidationPhone(phone)
 if (isValidPhone === false) return false
 //4. 템플릿 생성
-// const newnumber = sendNumber(number)
+const newnumber = sendNumber(number)
 
 const myTemplate = getWelcomeTemplate({name, email, newnumber, phone, site})
 // 5. 템플릿 전송
@@ -32,6 +32,6 @@ const email = "luckoding@gmail.co1m"
 const number = "011111-0000000"
 const phone = "010-0000-1111"
 const site = "coding.co.kr"
-const newnumber = sendNumber(number)
+// const newnumber = sendNumber(number)
 
-createUser({name, email, number, phone, site, newnumber})
+createUser({name, email, number, phone, site})
