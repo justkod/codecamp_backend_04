@@ -1,16 +1,38 @@
 
 function makeNumber(num){
-    let str = '';
+    let answer = '';
 
-    for(i=1 ; i < num ; i++){
-        str = str+ i + "-"
+    for(let i = 1; i <= num; i++){
+        answer += i
+        if(i !== num){
+            answer += '-'
+        }
     }
-    str = str + String(num)
-
-    console.log(str)
+    console.log(answer)
 }
 
-makeNumber(10)
+
+makeNumber(5)
+
+
+
+
+
+// function makeNumber(num){
+//     let str = '';
+
+//     for(i=1 ; i < num ; i++){
+//         str = str+ i + "-"
+//     }
+//     str = str + String(num)
+
+//     console.log(str)
+// }
+
+// makeNumber(10) ----------> 내 풀이
+
+
+
 
 // function makeNumber(num){
 //     let str = '';
@@ -26,3 +48,4 @@ makeNumber(10)
 // makeNumber(512334)
 
 //입력하는 숫자 사이사이에  - 추가하는 방법
+
