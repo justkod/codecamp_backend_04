@@ -1,13 +1,4 @@
 
-// export function checkValidationEmail(myemail){
-// if(myemail.includes("@") !== true){
-//     console.log("이메일 형식이 올바르지 않습니다.")
-//     return false;
-// }else if(myemail === "@") {
-//     console.log("이메일을 작성해 주세요.")
-//     return false;  
-// }
-// }
 
 import { getToday } from "./utils.js"
 import nodemailer from 'nodemailer'
@@ -24,20 +15,23 @@ return false
 
 
 
-export function getWelcomeTemplate({name, age, school}){
+export function getWelcomeTemplate({name, myphone, site}){
 
 
     const myTemplate = `
     <html>
+    <head>
+        <title>가입을 환영합니다^^</title>
+    </head>
         <body>
         <div style="display: flex; flex-direction:column; align-items: center;>
         <div style="width:500px;">
             <h1>${name}님 가입을 환영합니다!!!</h1>
             <hr />
             <div>이름 : ${name}</div>
-            <div>나이 : ${age}살</div>
-            <div>학교 : ${school}</div>
-            <div>가입일 : ${getToday()}</div>
+            <div>전화번호 : ${myphone}</div>
+            <div>좋아하는 사이트 : ${site}</div>
+            <div style="color:red;">가입일 : ${getToday()}</div>
             </div>
             </div>
         </body>
