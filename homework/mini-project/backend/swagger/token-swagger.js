@@ -4,22 +4,20 @@
  *   post:
  *     summary: 토큰 정보 저장
  *     tags: [Tokens]
- *     parameters:
- *            - name: userId
- *              in: path
- *              description: 토큰 정보
- *              schema:
- *                  type: object
- *                  properties:
- *                      token:
- *                          type : string
- *                      phone:
- *                          type : string
- *                      isAuth:
- *                          type : boolean
+ *     requestBody:
+ *              required: true
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          type: object
+ *                          properties:
+ *                                myphone:
+ *                                    type : string
+ *                                    required: true
+ *                                    example: "01012345678"
  *     responses:
  *       200:
- *         description: 토큰 등록
+ *         description: 핸드폰으로 인증문자가 전송되었습니다!
  *         content:
  *           application/json:
  *              schema:
@@ -34,27 +32,30 @@
  *                          isAuth:
  *                              type: boolean
  *                              example: false
+ *
  */
 
 /**
  * @swagger
  * /tokens/phone:
  *   patch:
- *     summary: 토큰 정보 갱신
+ *     summary: 토큰 정보 저장
  *     tags: [Tokens]
- *     parameters:
- *            - name: userId
- *              in: path
- *              description: 토큰 정보 갱신
- *              schema:
- *                  type: object
- *                  properties:
- *                      token:
- *                          type : string
- *                      phone:
- *                          type : string
- *                      isAuth:
- *                          type : boolean
+ *     requestBody:
+ *              required: true
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          type: object
+ *                          properties:
+ *                                myphone:
+ *                                    type : string
+ *                                    required: true
+ *                                    example: "01012345678"
+ *                                token:
+ *                                    type : string
+ *                                    required: true
+ *                                    example: "123456"
  *     responses:
  *       200:
  *         description: 토큰 정보 갱신
@@ -66,7 +67,7 @@
  *                          token:
  *                              type: string
  *                              example: "123456"
- *                          phone:
+ *                          myphone:
  *                              type: string
  *                              example: "01012345678"
  *                          isAuth:

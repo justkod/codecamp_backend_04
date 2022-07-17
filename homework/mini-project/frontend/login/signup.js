@@ -42,9 +42,9 @@ const submitToken = async () => {
 const submitSignup = async () => {
   const name = document.getElementById("SignupName").value;
   const personal =
-    document.getElementById("SignupPersonal1") +
+    document.getElementById("SignupPersonal1").value +
     "-" +
-    document.getElementById("SignupPersonal2");
+    document.getElementById("SignupPersonal2").value;
   const myphone =
     document.getElementById("PhoneNumber01").value +
     document.getElementById("PhoneNumber02").value +
@@ -61,6 +61,8 @@ const submitSignup = async () => {
     email: myemail,
     pwd: pwd,
   };
+
+  console.log(arr);
   axios
     .post("http://localhost:3000/user", {
       arr,

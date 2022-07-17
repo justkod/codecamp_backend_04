@@ -114,10 +114,15 @@ app.patch("/tokens/phone", async (req, res) => {
   const mytoken = req.body.token;
 
   const phoneresult = await Tokens.findOne({ phone: myphone });
+
+  if (phoneresult.token !== mytoken) {
+    res.send("인증번호가 다릅니다");
+  }
+
   if (phoneresult !== null) {
     await Tokens.updateOne({ token: mytoken }, { isAuth: true });
     res.send("인증 완료");
-  } else res.send("인증번호가 다릅니다");
+  }
 });
 
 app.get("/starbucks", async (req, res) => {
