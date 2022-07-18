@@ -4,10 +4,6 @@
  *      get:
  *        summary: 스타벅스 메뉴 가져오기
  *        tags: [Starbucks]
- *        parameters:
- *              - in: query
- *                name: number
- *                type: int
  *        responses:
  *          200:
  *            description: 성공

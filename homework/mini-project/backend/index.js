@@ -39,7 +39,7 @@ app.post("/user", async (req, res) => {
     res.send("에러!!! 핸드폰 번호가 인증되지 않았습니다.");
   }
   if (result.isAuth === false) {
-    res.status(422);
+    res.status(401);
     res.send("에러!!! 인증번호가 인증되지 않았습니다.");
   } else {
     const newpersonal = sendNumber(personal);
@@ -116,6 +116,7 @@ app.patch("/tokens/phone", async (req, res) => {
   const phoneresult = await Tokens.findOne({ phone: myphone });
 
   if (phoneresult.token !== mytoken) {
+    res.status(422);
     res.send("인증번호가 다릅니다");
   }
 

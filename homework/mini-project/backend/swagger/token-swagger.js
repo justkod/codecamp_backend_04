@@ -14,24 +14,10 @@
  *                                myphone:
  *                                    type : string
  *                                    required: true
- *                                    example: "01012345678"
+ *                                    example: "01024345605"
  *     responses:
  *       200:
  *         description: 핸드폰으로 인증문자가 전송되었습니다!
- *         content:
- *           application/json:
- *              schema:
- *                      type: object
- *                      properties:
- *                          token:
- *                              type: string
- *                              example: "123456"
- *                          phone:
- *                              type: string
- *                              example: "01012345678"
- *                          isAuth:
- *                              type: boolean
- *                              example: false
  *
  */
 
@@ -39,7 +25,7 @@
  * @swagger
  * /tokens/phone:
  *   patch:
- *     summary: 토큰 정보 저장
+ *     summary: 토큰 정보 업데이트
  *     tags: [Tokens]
  *     requestBody:
  *              required: true
@@ -51,26 +37,14 @@
  *                                myphone:
  *                                    type : string
  *                                    required: true
- *                                    example: "01012345678"
+ *                                    example: "01024345605"
  *                                token:
  *                                    type : string
  *                                    required: true
  *                                    example: "123456"
  *     responses:
  *       200:
- *         description: 토큰 정보 갱신
- *         content:
- *           application/json:
- *              schema:
- *                      type: object
- *                      properties:
- *                          token:
- *                              type: string
- *                              example: "123456"
- *                          myphone:
- *                              type: string
- *                              example: "01012345678"
- *                          isAuth:
- *                              type: boolean
- *                              example: true
+ *         description: 인증 완료
+ *       422:
+ *         description: 인증번호가 다릅니다
  */
