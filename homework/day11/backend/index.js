@@ -8,7 +8,7 @@ import { options } from "./swagger/config.js";
 import cors from "cors";
 /*------------몽구스 세팅 -------------------- */
 import mongoose from "mongoose";
-
+import { Tokens } from "./mvc/models/token.model.js";
 import { UserController } from "./mvc/controllers/user.controller.js";
 
 const app = express();
